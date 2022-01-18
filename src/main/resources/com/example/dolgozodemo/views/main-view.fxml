@@ -25,5 +25,55 @@
             </children>
         </GridPane>
         <ListView fx:id="dolgozoList" maxHeight="1080.0" prefHeight="300.0" prefWidth="320.0" stylesheets="@../css/listStyle.css" VBox.vgrow="ALWAYS" />
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="120.0" minHeight="120.0" prefHeight="120.0" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <TitledPane animated="false" collapsible="false" text="Rendezési szempont">
+              <content>
+                <VBox minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                         <RadioButton fx:id="radioNev" mnemonicParsing="false" selected="true" text="Név" >
+                         <toggleGroup>
+                             <ToggleGroup fx:id="rendezesSzempont" />
+                         </toggleGroup>
+                         </RadioButton>
+                        <RadioButton fx:id="radioKor" mnemonicParsing="false" text="Kor" >
+                            <toggleGroup>
+                                <fx:reference source="rendezesSzempont" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="radioFizetes" mnemonicParsing="false" text="Fizetés" >
+                            <toggleGroup>
+                                <fx:reference source="rendezesSzempont" />
+                            </toggleGroup>
+                        </RadioButton>
+                     </children></VBox>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" text="Rendezés iránya" GridPane.columnIndex="1">
+              <content>
+                <VBox minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <RadioButton fx:id="radioNovekvo" mnemonicParsing="false" selected="true" text="Növekvő" >
+                            <toggleGroup>
+                                <ToggleGroup fx:id="rendezesIranya" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="radioCsokkeno" mnemonicParsing="false" text="Csökkenő" >
+                            <toggleGroup>
+                                <fx:reference source="rendezesIranya" />
+                            </toggleGroup>
+                        </RadioButton>
+                     </children></VBox>
+              </content>
+            </TitledPane>
+         </children>
+      </GridPane>
     </children>
 </VBox>
