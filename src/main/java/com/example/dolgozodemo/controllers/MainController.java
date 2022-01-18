@@ -4,6 +4,7 @@ import com.example.dolgozodemo.DolgozoApp;
 import com.example.dolgozodemo.core.Controller;
 import com.example.dolgozodemo.models.Dolgozo;
 import com.example.dolgozodemo.models.DolgozoDB;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -22,7 +23,7 @@ public class MainController extends Controller {
             db = new DolgozoDB();
             listaFeltolt();
         } catch (SQLException e) {
-            hibaKiir(e);
+            Platform.runLater(() -> hibaKiir(e));
         }
     }
 
@@ -78,7 +79,7 @@ public class MainController extends Controller {
             dolgozoList.getItems().clear();
             dolgozoList.getItems().addAll(db.getDolgozok());
         } catch (SQLException e) {
-            hibaKiir(e);
+            Platform.runLater(() -> hibaKiir(e));
         }
     }
 
