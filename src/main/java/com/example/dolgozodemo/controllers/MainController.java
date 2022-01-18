@@ -5,10 +5,13 @@ import com.example.dolgozodemo.core.Controller;
 import com.example.dolgozodemo.models.Dolgozo;
 import com.example.dolgozodemo.models.DolgozoDB;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,8 +20,22 @@ import java.sql.SQLException;
 public class MainController extends Controller {
     @FXML private ListView<Dolgozo> dolgozoList;
     private DolgozoDB db;
+    @FXML
+    private RadioButton radioKor;
+    @FXML
+    private ToggleGroup rendezesSzempont;
+    @FXML
+    private RadioButton radioNev;
+    @FXML
+    private RadioButton radioFizetes;
+    @FXML
+    private RadioButton radioCsokkeno;
+    @FXML
+    private ToggleGroup rendezesIranya;
+    @FXML
+    private RadioButton radioNovekvo;
 
-    @FXML public void initialize() {
+    public void initialize() {
         try {
             db = new DolgozoDB();
             listaFeltolt();
@@ -83,4 +100,23 @@ public class MainController extends Controller {
         }
     }
 
+    @FXML
+    public void radioKorCllick(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void radioCsokkenoClick(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void radioFizetesCllick(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void radioNovekvoClick(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void radioNevCllick(ActionEvent actionEvent) {
+    }
 }
