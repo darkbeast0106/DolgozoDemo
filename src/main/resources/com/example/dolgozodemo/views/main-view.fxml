@@ -38,17 +38,17 @@
               <content>
                 <VBox minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                         <RadioButton fx:id="radioNev" mnemonicParsing="false" selected="true" text="Név" >
+                         <RadioButton fx:id="radioNev" mnemonicParsing="false" onAction="#radioNevCllick" selected="true" text="Név">
                          <toggleGroup>
                              <ToggleGroup fx:id="rendezesSzempont" />
                          </toggleGroup>
                          </RadioButton>
-                        <RadioButton fx:id="radioKor" mnemonicParsing="false" text="Kor" >
+                        <RadioButton fx:id="radioKor" mnemonicParsing="false" onAction="#radioKorCllick" text="Kor">
                             <toggleGroup>
                                 <fx:reference source="rendezesSzempont" />
                             </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="radioFizetes" mnemonicParsing="false" text="Fizetés" >
+                        <RadioButton fx:id="radioFizetes" mnemonicParsing="false" onAction="#radioFizetesCllick" text="Fizetés">
                             <toggleGroup>
                                 <fx:reference source="rendezesSzempont" />
                             </toggleGroup>
@@ -60,12 +60,12 @@
               <content>
                 <VBox minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <RadioButton fx:id="radioNovekvo" mnemonicParsing="false" selected="true" text="Növekvő" >
+                        <RadioButton fx:id="radioNovekvo" mnemonicParsing="false" onAction="#radioNovekvoClick" selected="true" text="Növekvő">
                             <toggleGroup>
                                 <ToggleGroup fx:id="rendezesIranya" />
                             </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="radioCsokkeno" mnemonicParsing="false" text="Csökkenő" >
+                        <RadioButton fx:id="radioCsokkeno" mnemonicParsing="false" onAction="#radioCsokkenoClick" text="Csökkenő">
                             <toggleGroup>
                                 <fx:reference source="rendezesIranya" />
                             </toggleGroup>
